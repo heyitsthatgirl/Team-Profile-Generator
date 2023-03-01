@@ -2,7 +2,7 @@
 
 ## Your Task
 
-Your task is to build a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. 
+Your task is to build a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that logs summaries for each person. 
 
 Because this Challenge will require the use of the `Inquirer` package, ensure that you install and use Inquirer version 8.2.4. To do so, use the following command in your project folder: `npm i inquirer@8.2.4`.
 
@@ -16,7 +16,7 @@ Because this application won’t be deployed, you’ll need to provide a link to
 
 ```md
 AS A manager
-I WANT to generate a webpage that displays my team's basic info
+I WANT to generate a webpage that logs my team's basic info
 SO THAT I have quick access to their emails and GitHub profiles
 ```
 
@@ -25,7 +25,7 @@ SO THAT I have quick access to their emails and GitHub profiles
 ```md
 GIVEN a command-line application that accepts user input
 WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
+THEN an HTML file is generated that logs a nicely formatted team roster based on user input
 WHEN I click on an email address in the HTML
 THEN my default email program opens and populates the TO field of the email with the address
 WHEN I click on the GitHub username
