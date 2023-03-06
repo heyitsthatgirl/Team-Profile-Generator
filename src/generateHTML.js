@@ -7,15 +7,18 @@ function renderTeamHTML(teamRoster) {
   const generateManagerCard = (manager) => {
     let managerCard = `
   <div class="card">
-    <h2>${manager.getName()} </br> ${manager.getRole()}</h2>
-    <ul>
-        <li>
-            ${manager.getId()}
-        </li>
-        <li>
-            ${manager.getEmail()}
-        </li>
-    </ul>
+    <h2>${manager.getName()} </br> <i class="fa-solid fa-person-chalkboard"></i> ${manager.getRole()}</h2>
+    
+        <p>
+            ID#: ${manager.getId()}
+        </p>
+        <p>
+            Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a>
+        </p>
+        <p>
+            Office#: ${manager.getOfficeNumber()}
+        </p>
+    
 </div>`;
 
     // add the manager section to the html array
@@ -26,18 +29,18 @@ function renderTeamHTML(teamRoster) {
   const generateEngineerCard = (engineer) => {
     let engineerCard = ` 
     <div class="card">
-        <h2>${engineer.getName()} </br> ${engineer.getRole()}</h2>
-        <ul>
-            <li>
-                ${engineer.getId()}
-            </li>
-            <li>
-                ${engineer.getEmail()}
-            </li>
-            <li>
-                ${engineer.getGitHub()}
-            </li>    
-        </ul>
+        <h2>${engineer.getName()} </br> <i class="fa-solid fa-laptop-code"></i> ${engineer.getRole()}</h2>
+        
+            <p>
+                ID#: ${engineer.getId()}
+            </p>
+            <p>
+                Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a>
+            </p>
+            <p>
+                GitHub: <a href="https://github.com/${engineer.getGitHub()}" target="_blank">${engineer.getGitHub()}</a>
+            </p>    
+        
     </div>`;
 
     // adds the engineer section to the html array
@@ -48,18 +51,18 @@ function renderTeamHTML(teamRoster) {
   const generateInternCard = (intern) => {
     let internCard = ` 
       <div class="card">
-          <h2>${intern.getName()} </br> ${intern.getRole()}</h2>
-          <ul>
-              <li>
-                  ${intern.getId()}
-              </li>
-              <li>
-                  ${intern.getEmail()}
-              </li>
-              <li>
-                  ${intern.getSchool()}
-              </li> 
-          </ul>
+          <h2>${intern.getName()}</br> <i class="fa-solid fa-user-graduate"></i> ${intern.getRole()}</h2>
+          
+              <p>
+                  ID#: ${intern.getId()}
+              </p>
+              <p>
+                  Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a>
+              </p>
+              <p>
+                  Attending: ${intern.getSchool()}
+              </p> 
+          
       </div>`;
 
     // adds the intern section to the html array
@@ -104,16 +107,9 @@ function generateHTML(teamRoster) {
    ${renderTeamHTML(teamRoster)}
 
   </section>
+  <script src="https://kit.fontawesome.com/61a11c1f84.js" crossorigin="anonymous"></script>
   </body>
   </html>`;
 }
 
 module.exports = generateHTML;
-
-//  <li>
-// ${manager.getOfficeNumber()}
-// </li>
-
-// {/* <li>${engineer.getGitHub()}</li>; */}
-
-// {/* <li>${intern.getSchool()}</li>; */}

@@ -1,13 +1,12 @@
 // importing fs and inquire
 const inquirer = require("inquirer");
 const fs = require("fs");
-// importing class/subclasses
-// const Employee = require("./lib/Employee");
+// importing subclasses
 const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
+// importing template from generateHTML.js
 const generateHTML = require("./src/generateHTML");
-// const generateManagerCard = require("./src/generateHTML");
 
 // an empty array to add team members to as they are created
 const teamRoster = [];
@@ -52,12 +51,6 @@ async function init() {
   // prompt the user to add team members
   mainMenu();
 
-  // // creates an html file that displays the Manager's information
-  //     fs.writeFile("sample.html", generateManagerCard(manager), (err) => {
-  //         if(err){
-  //             console.log(err)
-  //         };
-  //     });
 }
 
 async function mainMenu() {
@@ -73,6 +66,7 @@ async function mainMenu() {
   const userChoice = await inquirer.prompt(mainMenQs);
   console.log(userChoice.makeTeam);
 
+  //executes a function based on which option the user chooses
   switch (userChoice.makeTeam) {
     case "Add an Engineer":
       createEngineer();
@@ -85,15 +79,6 @@ async function mainMenu() {
       break;
   }
 
-  // couldn't get an if statement to work
-  //   if (userChoice.makeTeam = 'Add an Engineer') {
-  //     createEngineer();
-  //   }
-  //   if (userChoice == "Add an Intern") {
-  //     createIntern();
-  //   } else {
-  //     finishTeam();
-  //   };
 }
 
 async function createEngineer() {
@@ -138,6 +123,7 @@ async function createEngineer() {
 }
 
 async function createIntern() {
+  // get info about intern
   const internQs = [
     {
       type: "input",
@@ -177,6 +163,7 @@ async function createIntern() {
   mainMenu();
 }
 
+// function to create a file based on the user input
 function writeFile(fileName, data) {
   fs.writeFile(fileName, data, (err) => {
     if (err) {
@@ -186,10 +173,12 @@ function writeFile(fileName, data) {
   });
 }
 
+// user selects finish, file is created using generateHTML template
 function finishTeam() {
    
 writeFile("team.html", generateHTML(teamRoster), console.log(teamRoster));
 
 };
 
+// app is initialized here
 init();

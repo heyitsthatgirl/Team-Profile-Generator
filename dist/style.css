@@ -1,36 +1,46 @@
-header {
-    background-color: tan;
-    text-align: center;
+/* sets the font family and color for all elements on the page */
+* {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
 }
-
+/* sets header background to teal and centers text */
+header {
+    background-color: rgb(7, 153, 175);
+    text-align: center;
+    padding: 50px;
+}
+/* allows the newly created employee cards to fit evenly on the page */
 section {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
-
+/* keeps card height limited to content height, sets a space between each, sets a shadow and curves the border */
 .card {
-    border-style: solid;
     height: fit-content;
-    width: 250px;
-    margin-bottom: 20px;
+    min-width: 325px;
+    margin: 20px;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 25px;
 }
-
+/* sets the background color for each employee card header, curves top right corner, spaces the lines a little further apart */
 .card h2 {
-    text-align: center;
-    background-color: tan;
+    background-color: rgb(55, 108, 116);
+    padding: 10px;
+    margin-top: 0px;
+    line-height: 35px;
+    border-top-right-radius: 25px;
 }
-
-.card h3 {
-    text-align: center;
-    background-color: tan;
-}
-
-ul {
-    list-style: none;
-}
-
-li {
+/* sets the font color, background color, and curves the border of the employee info */
+p {
     margin: 15px;
+    padding: 10px;
+    color: black;
+    background-color: beige;
+    border-radius: 10px;
+}
+/* makes the anchor text for email and github black */
+a {
+    color: black;
 }
 
