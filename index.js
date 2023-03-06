@@ -3,9 +3,10 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 // importing class/subclasses
 // const Employee = require("./lib/Employee");
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager.js");
+const Engineer = require("./lib/Engineer.js");
+const Intern = require("./lib/Intern.js");
+const generateHTML = require("./src/generateHTML");
 // const generateManagerCard = require("./src/generateHTML");
 
 // an empty array to add team members to as they are created
@@ -84,11 +85,10 @@ async function mainMenu() {
       break;
   }
 
+  // couldn't get an if statement to work
   //   if (userChoice.makeTeam = 'Add an Engineer') {
   //     createEngineer();
-  //   } else {
-  //     console.log("no!");
-  //   };
+  //   }
   //   if (userChoice == "Add an Intern") {
   //     createIntern();
   //   } else {
@@ -177,10 +177,19 @@ async function createIntern() {
   mainMenu();
 }
 
-function finishTeam() {
-  // log the completed team
-  console.log("Here is your team:", teamRoster);
-
+function writeFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) => {
+    if (err) {
+      return console.log(err);
+    }
+    console.log("Your file has been created!");
+  });
 }
+
+function finishTeam() {
+   
+writeFile("team.html", generateHTML(teamRoster), console.log(teamRoster));
+
+};
 
 init();
