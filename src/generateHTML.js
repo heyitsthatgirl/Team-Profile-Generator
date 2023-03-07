@@ -69,6 +69,7 @@ function renderTeamHTML(teamRoster) {
     teamHTML.push(internCard);
   };
 
+  // this for statement loops through the teamRoster array and calls the function associated with each type of employee in the array
   for (let i = 0; i < teamRoster.length; i++) {
     if (teamRoster[i].getRole() === "Manager") {
       generateManagerCard(teamRoster[i]);
@@ -85,6 +86,7 @@ function renderTeamHTML(teamRoster) {
   return teamHTML.join("");
 }
 
+// template for the html file that the created elements will be inserted into
 function generateHTML(teamRoster) {
   return `
   <!DOCTYPE html>
@@ -93,8 +95,8 @@ function generateHTML(teamRoster) {
       <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./dist/style.css"/>
-        <title>HTML Template</title>
+        <link rel="stylesheet" href="./style.css"/>
+        <title>Team Roster</title>
     </head>
     <body>
     
@@ -112,4 +114,5 @@ function generateHTML(teamRoster) {
   </html>`;
 }
 
+// generateHTML function exported to be used in the index.js file
 module.exports = generateHTML;

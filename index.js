@@ -1,12 +1,21 @@
 // importing fs and inquire
 const inquirer = require("inquirer");
 const fs = require("fs");
+
 // importing subclasses
 const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
+
 // importing template from generateHTML.js
 const generateHTML = require("./src/generateHTML");
+
+// path module is being imported
+const path = require("path");
+// determines the location of the new file when it's created
+const newFilePath = path.resolve(__dirname, "dist");
+// merges the new file path and file name to be used in writeFile function later
+const teamRosterHTML = path.join(newFilePath, "teamRoster.html");
 
 // an empty array to add team members to as they are created
 const teamRoster = [];
@@ -50,7 +59,6 @@ async function init() {
   teamRoster.push(manager);
   // prompt the user to add team members
   mainMenu();
-
 }
 
 async function mainMenu() {
@@ -78,7 +86,6 @@ async function mainMenu() {
       finishTeam();
       break;
   }
-
 }
 
 async function createEngineer() {
@@ -169,16 +176,14 @@ function writeFile(fileName, data) {
     if (err) {
       return console.log(err);
     }
-    console.log("Your file has been created!");
+    console.log("Your team roster is ready!");
   });
 }
 
 // user selects finish, file is created using generateHTML template
 function finishTeam() {
-   
-writeFile("team.html", generateHTML(teamRoster), console.log(teamRoster));
-
-};
+  writeFile(teamRosterHTML, generateHTML(teamRoster), console.log(teamRoster));
+}
 
 // app is initialized here
 init();

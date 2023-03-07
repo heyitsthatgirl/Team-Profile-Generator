@@ -4,4 +4,6 @@ node_modules/
 
 **/.DS_Store
 
-template.html
+*.DS_Store
+
+*/.DS_Store

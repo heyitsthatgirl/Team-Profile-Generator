@@ -5,7 +5,7 @@
 }
 /* sets header background to teal and centers text */
 header {
-    background-color: rgb(7, 153, 175);
+    background-color: rgb(81, 124, 131);
     text-align: center;
     padding: 50px;
 }
@@ -18,7 +18,7 @@ section {
 /* keeps card height limited to content height, sets a space between each, sets a shadow and curves the border */
 .card {
     height: fit-content;
-    min-width: 325px;
+    min-width: 300px;
     margin: 20px;
     box-shadow: 5px 5px 5px black;
     border-radius: 25px;
