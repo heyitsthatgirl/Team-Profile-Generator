@@ -18,7 +18,7 @@ The Team Profile Generator is a command-line application that takes in informati
 
 ## Installation
 
-Team Profile Generator requires Node.js and Node Package Manager (npm).
+Team Profile Generator requires `Node.js` and Node Package Manager (`npm`).
 
 From the command line, navigate to the directory where you would like to keep the app and run the following code:
 
